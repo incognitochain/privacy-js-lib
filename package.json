@@ -1,0 +1,28 @@
+{
+  "name": "privacy-js-lib",
+  "version": "1.0.0",
+  "description": "Constant-privacy library",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "dependencies": {
+    "bn.js": "^4.11.8",
+    "elliptic": "^6.4.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/constant-money/privacy-js-lib.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/constant-money/privacy-js-lib/issues"
+  },
+  "homepage": "https://github.com/constant-money/privacy-js-lib#readme"
+}
