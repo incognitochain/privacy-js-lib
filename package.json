@@ -9,7 +9,8 @@
   },
   "dependencies": {
     "bn.js": "^4.11.8",
-    "elliptic": "^6.4.1"
+    "elliptic": "^6.4.1",
+    "sjcl": "^1.0.8"
   },
   "devDependencies": {},
   "scripts": {
