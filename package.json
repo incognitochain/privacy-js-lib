@@ -10,7 +10,6 @@
   "dependencies": {
     "bn.js": "^4.11.8",
     "elliptic": "^6.4.1",
-    "int64-buffer": "^0.99.1007",
     "safe-buffer": "^5.1.2",
     "sjcl": "^1.0.8"
   },
