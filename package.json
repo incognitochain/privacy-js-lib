@@ -15,8 +15,7 @@
     "elliptic": "^6.4.1",
     "pbkdf2": "^3.0.17",
     "random-bytes": "^1.0.0",
-    "safe-buffer": "^5.1.2",
-    "sjcl": "^1.0.8"
+    "safe-buffer": "^5.1.2"
   },
   "devDependencies": {},
   "scripts": {
