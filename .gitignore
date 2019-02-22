@@ -1,8 +1,5 @@
 .idea
 
-node_modules/*
-!node_modules/sjcl/
-!node_modules/elliptic/
-
+node_modules/
 
 package-lock.json
