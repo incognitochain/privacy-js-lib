@@ -22,32 +22,4 @@ describe('Curve P256', function () {
     it('A point which not safe on P256 is not accepted', function () {
         assert.ok(!badPoint.isSafe());
     });
-    it('Marshall and Unmarshall a random point', function () {
-        let tmp = cs.PRIVACY_VERSION;
-        let marshaled = randomPoint.marshalJSON();
-        let res = false;
-        let err = null;
-        try {
-            res = randomPoint.eq(P256.unmarshalJSON(marshaled));
-        } catch (error) {
-            err = error;
-            res = false;
-        } finally {
-            assert.ok(res, "Test marshall and unmarshall with normal value: " + err);
-        }
-        res = true;
-        err = null;
-        cs.PRIVACY_VERSION = 0x254;
-        let badUnmarshaled = null;
-        try {
-            badUnmarshaled = P256.unmarshalJSON(randomPoint.marshalJSON());
-            res = randomPoint.eq(badUnmarshaled);
-        } catch (error) {
-            err = error;
-            res = false;
-        } finally {
-            assert.ok(!res, "Test marshall and unmarshall with wrong value: " + err);
-        }
-        cs.PRIVACY_VERSION = tmp;
-    });
 });
