@@ -1,6 +1,5 @@
 let snnoprivacy = require('../../lib/zkps/snnoprivacy');
 let utils = require('../../lib/privacy_utils');
-let keys = require('../../lib/key');
 let Pds = require('../../lib/pedersen').PedCom;
 let cs = require('../../lib/constants');
 let assert = require('assert');
@@ -14,18 +13,15 @@ describe('Serial number no privacy', function () {
     let wit = null;
     let proof = null;
     before(function () {
-        secretKey = keys.GenerateSpendingKey(utils.randBytes());
-        publicKey = keys.GeneratePublicKey(secretKey);
-        console.log("aaaa");
+        secretKey = utils.randScalar();
+        publicKey = P256.g.mul(secretKey).compress();
     });
     it('Serial number no privacy prove and verify with normal value', function () {
-        console.log("bbbb");
         SND = utils.randScalar();
-        serialNumber = (Pds.G[cs.SK].derive(new BigInt(secretKey,10), SND));
+        serialNumber = (Pds.G[cs.SK].derive(secretKey, SND));
         wit = new snnoprivacy.SNNoPrivacyWitness();
-        wit.set(serialNumber, P256.decompress(publicKey), SND, new BigInt(secretKey,10));
+        wit.set(serialNumber, P256.decompress(publicKey), SND, secretKey);
         proof = wit.prove();
-        console.log(publicKey,wit, proof);
         assert.ok(proof.verify());
     });
 });
