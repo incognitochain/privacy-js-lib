@@ -22,4 +22,29 @@ describe('Curve P256', function () {
     it('A point which not safe on P256 is not accepted', function () {
         assert.ok(!badPoint.isSafe());
     });
+    it('Randomize must return both of odd and even point', function(){
+        let odd = false;
+        let even = false; 
+        for (let i=0;i<100; i++){
+            randomPoint = P256.randomize();
+            if (randomPoint.getY().isOdd()){
+                if (randomPoint.isSafe()){
+                    let decompressedPoint = P256.decompress(randomPoint.compress());
+                    odd=randomPoint.eq(decompressedPoint);
+                    if (!odd){
+                        break;
+                    }
+                }
+            } else {
+                if (randomPoint.isSafe()){
+                    let decompressedPoint = P256.decompress(randomPoint.compress());
+                    even=randomPoint.eq(decompressedPoint);
+                    if (!even){
+                        break;
+                    }
+                }
+            }
+        }
+        assert.ok(odd&even);
+    });
 });

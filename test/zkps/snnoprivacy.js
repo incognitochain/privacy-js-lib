@@ -3,7 +3,6 @@ let utils = require('../../lib/privacy_utils');
 let Pds = require('../../lib/pedersen').PedCom;
 let cs = require('../../lib/constants');
 let assert = require('assert');
-let BigInt = require('bn.js');
 let P256 = require('../../lib/ec').P256;
 describe('Serial number no privacy', function () {
     let secretKey = null;

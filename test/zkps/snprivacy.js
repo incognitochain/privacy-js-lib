@@ -15,7 +15,7 @@ describe('Serial number privacy', function () {
         secretKey = utils.randScalar();
         publicKey = P256.g.mul(secretKey).compress();
     });
-    it('Serial number no privacy prove and verify with normal value', function () {
+    it('Serial number privacy prove and verify with normal value', function () {
         SND = utils.randScalar();
         let rSND = utils.randScalar();
         let rSK = utils.randScalar();
