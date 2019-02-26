@@ -15,7 +15,8 @@
     "elliptic": "^6.4.1",
     "pbkdf2": "^3.0.17",
     "random-bytes": "^1.0.0",
-    "safe-buffer": "^5.1.2"
+    "safe-buffer": "^5.1.2",
+    "threads": "^0.12.1"
   },
   "devDependencies": {
     "mocha": "^6.0.0"
