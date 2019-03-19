@@ -4,6 +4,7 @@ let Pds = require('../../lib/pedersen').PedCom;
 let cs = require('../../lib/constants');
 let assert = require('assert');
 let P256 = require('../../lib/ec').P256;
+let BN = require('bn.js')
 describe('Serial number no privacy', function () {
     let secretKey = null;
     let publicKey = null;
@@ -17,7 +18,7 @@ describe('Serial number no privacy', function () {
     });
     it('Serial number no privacy prove and verify with normal value', function () {
         SND = utils.randScalar();
-        serialNumber = (Pds.G[cs.SK].derive(secretKey, SND));
+        serialNumber = (Pds.G[cs.SK].derive(secretKey.toRed(BN.red(P256.n.clone())), SND));
         wit = new snnoprivacy.SNNoPrivacyWitness();
         wit.set(serialNumber, P256.decompress(publicKey), SND, secretKey);
         proof = wit.prove();

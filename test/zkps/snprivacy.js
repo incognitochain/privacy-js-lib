@@ -4,6 +4,7 @@ let Pds = require('../../lib/pedersen').PedCom;
 let cs = require('../../lib/constants');
 let assert = require('assert');
 let P256 = require('../../lib/ec').P256;
+let BN = require('bn.js')
 describe('Serial number privacy', function () {
     let secretKey = null;
     let publicKey = null;
@@ -19,7 +20,7 @@ describe('Serial number privacy', function () {
         SND = utils.randScalar();
         let rSND = utils.randScalar();
         let rSK = utils.randScalar();
-        serialNumber = (Pds.G[cs.SK].derive(secretKey, SND));
+        serialNumber = (Pds.G[cs.SK].derive(secretKey.toRed(BN.red(P256.n.clone())), SND));
         wit = new snprivacy.SNPrivacyWitness();
         wit.set(serialNumber, Pds.commitAtIndex(secretKey,rSK,cs.SK), Pds.commitAtIndex(SND,rSND,cs.SND), secretKey, rSK, SND, rSND);
         proof = wit.prove();
