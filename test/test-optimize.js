@@ -13,6 +13,7 @@ function Test123() {
   let result1 = P256.g.derive(spBN, aBN);
   console.log("Result1: ", result1);
   console.timeEnd("Method 1: ");
+
   console.time("Method 2: ");
   let result2 = P256.g.deriveOptimized(sp, a);
   console.log("Result1: ", result2);
