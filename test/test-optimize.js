@@ -44,4 +44,24 @@ function Test123() {
   console.log(temp1)
 }
 
-Test123()
+// Test123()
+
+// function Test1234(){
+//   const g = P256.g
+//   let h = g.hash(100);
+//   console.log("Res: ", h.compress().join(" "));
+
+//   h = g.hash(1000);
+//   console.log("Res: ", h.compress().join(" "));
+
+//   h = g.hash(10000);
+//   console.log("Res: ", h.compress().join(" "));
+
+//   h = g.hash(100000);
+//   console.log("Res: ", h.compress().join(" "));
+
+//   h = g.hash(1000000);
+//   console.log("Res: ", h.compress().join(" "));
+// }
+
+// Test1234()
