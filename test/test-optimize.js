@@ -65,3 +65,7 @@ function Test123() {
 // }
 
 // Test1234()
+
+
+let point = P256.g.hash(10000);
+console.log("TEst hash: ", point);
