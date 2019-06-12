@@ -1,5 +1,6 @@
 let P256 = require('../lib/ec').P256;
 let bn = require('bn.js');
+const Utility = require('../lib/privacy_utils').Utility;
 
 
 function Test123() {
@@ -67,5 +68,9 @@ function Test123() {
 // Test1234()
 
 
-let point = P256.g.hash(10000);
-console.log("TEst hash: ", point);
+// let point = P256.g.hash(10000);
+// console.log("TEst hash: ", point);
+
+console.log("Utility: ", Utility.RandomBytesFunc);
+
+console.log("Utility.A: ", Utility.A);
