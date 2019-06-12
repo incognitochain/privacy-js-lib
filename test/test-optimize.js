@@ -71,6 +71,8 @@ function Test123() {
 // let point = P256.g.hash(10000);
 // console.log("TEst hash: ", point);
 
-console.log("Utility: ", Utility.RandomBytesFunc);
+let u = Utility();
 
-console.log("Utility.A: ", Utility.A);
+u.set(()=> {console.log("A")});
+
+console.log("Utility: ", u.get());
