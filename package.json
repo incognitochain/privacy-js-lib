@@ -35,12 +35,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/constant-money/privacy-js-lib.git"
+    "url": "git+https://github.com/incognitochain/privacy-js-lib.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/constant-money/privacy-js-lib/issues"
+    "url": "https://github.com/incognitochain/privacy-js-lib/issues"
   },
-  "homepage": "https://github.com/constant-money/privacy-js-lib#readme"
+  "homepage": "https://github.com/incognitochain/privacy-js-lib#readme"
 }
