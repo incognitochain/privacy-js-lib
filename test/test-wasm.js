@@ -2,7 +2,8 @@ const gobridge = require('golang-wasm-async-loader/dist/gobridge');
 const {join} = require('path');
 require('golang-wasm-async-loader/lib/wasm_exec');
 require('isomorphic-fetch');
-var fs = Function("return requ" + "ire('fs')")();
+var fs = require('fs');
+// var base64js = require('base64-js')
 var privacyUtils = require('../lib/privacy_utils');
 
 global.requestAnimationFrame = global.setImmediate;
