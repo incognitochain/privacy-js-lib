@@ -6,7 +6,7 @@ var fs = require('fs');
 const go = new Go();
 let inst;
 if (fs.readFileSync) {
-  let data = fs.readFileSync("../privacy1.wasm")
+  let data = fs.readFileSync("../privacy.wasm")
   WebAssembly.instantiate(data, go.importObject).then(async (result) => {
     inst = result.instance;
     go.run(inst);
@@ -19,7 +19,7 @@ if (fs.readFileSync) {
       return await WebAssembly.instantiate(source, importObject);
     };
   }
-  WebAssembly.instantiateStreaming(fetch("../privacy1.wasm"), go.importObject).then(async (result) => {
+  WebAssembly.instantiateStreaming(fetch("../privacy.wasm"), go.importObject).then(async (result) => {
     inst = result.instance;
     go.run(inst);
     await sleep(3000)
