@@ -3,7 +3,6 @@ const {join} = require('path');
 require('golang-wasm-async-loader/lib/wasm_exec');
 require('isomorphic-fetch');
 var fs = require('fs');
-// var base64js = require('base64-js')
 var privacyUtils = require('../lib/privacy_utils');
 
 global.requestAnimationFrame = global.setImmediate;
@@ -14,10 +13,6 @@ let p = new Promise(resolve =>
 const wasm = gobridge.default(p);
 
 async function run() {
-  /*let result = await wasm.add(1, 2);
-  console.log(result);
-  await wasm.sayHello("Bao");*/
-
   console.time("HHHHHHH time:");
   let object = {
     "values": ["1", "2"],
@@ -33,8 +28,6 @@ async function run() {
 
   let proofEncode = privacyUtils.base64Encode(proofBytes);
   console.log("proofEncode: ", proofEncode);
-
-
 };
 
 run();
