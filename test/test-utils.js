@@ -3,6 +3,7 @@ let bn = require('bn.js');
 // let sha3 = require('sha3');
 let utils = require('../lib/privacy_utils');
 const { Keccak } = require('sha3');
+const {P256} = require('../lib/ec');
 // let js = require('browserify-fs');
 
 // function TestReadFile(){
@@ -59,4 +60,11 @@ function TestConvertIntToBinary(){
     console.log("number: ", number.toString());
 }
 
-TestConvertIntToBinary()
+// TestConvertIntToBinary()
+
+function TestDecompress(){
+    point = P256.decompress([3, 82, 215, 192, 120, 159, 15, 83, 197, 214, 18, 159, 119, 126, 215, 206, 164, 218, 26, 178, 198, 32, 234, 31, 22, 182, 116, 234, 130, 106, 152, 129, 180])
+    console.log("Point:", point)
+}
+
+TestDecompress()
