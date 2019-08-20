@@ -67,4 +67,12 @@ function TestDecompress(){
     console.log("Point:", point)
 }
 
-TestDecompress()
+// TestDecompress()
+
+function testKeccak(){
+    let hash = utils.hashKeccakBytesToBytes(utils.stringToBytes('abc'));
+
+    console.log("Hash hex string: ", utils.toHexString(hash));
+}
+
+testKeccak()
